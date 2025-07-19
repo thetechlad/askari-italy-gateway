@@ -9,32 +9,46 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 210 50% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 50% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 50% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Askari Brand Colors */
+    --primary: 210 83% 19%; /* Navy Blue #0A2342 */
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 154 100% 29%; /* Italian Green #009246 */
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 41 48% 73%; /* Light Gold #E4C590 */
+    --accent-foreground: 210 50% 15%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 210 20% 50%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 210 83% 19%;
+
+    /* Premium Design System */
+    --gradient-primary: linear-gradient(135deg, hsl(210 83% 19%), hsl(210 83% 25%));
+    --gradient-secondary: linear-gradient(135deg, hsl(154 100% 29%), hsl(154 100% 35%));
+    --gradient-accent: linear-gradient(135deg, hsl(41 48% 73%), hsl(41 48% 80%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 83% 19%) 0%, hsl(154 100% 29%) 100%);
+    
+    --shadow-elegant: 0 10px 30px -10px hsl(210 83% 19% / 0.3);
+    --shadow-soft: 0 4px 15px -5px hsl(210 20% 50% / 0.2);
+    --shadow-gold: 0 8px 25px -8px hsl(41 48% 73% / 0.4);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
 
@@ -56,33 +70,40 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 210 83% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 210 83% 12%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 210 83% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Dark Mode Askari Colors */
+    --primary: 41 48% 73%; /* Light Gold becomes primary in dark */
+    --primary-foreground: 210 83% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 154 100% 35%; /* Brighter green for dark mode */
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 210 83% 25%; /* Lighter navy for accent */
+    --accent-foreground: 0 0% 98%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --muted: 210 50% 15%;
+    --muted-foreground: 210 20% 70%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 210 50% 20%;
+    --input: 210 50% 20%;
+    --ring: 41 48% 73%;
+
+    /* Dark Mode Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(41 48% 73%), hsl(41 48% 80%));
+    --gradient-secondary: linear-gradient(135deg, hsl(154 100% 35%), hsl(154 100% 40%));
+    --gradient-accent: linear-gradient(135deg, hsl(210 83% 25%), hsl(210 83% 30%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 83% 8%) 0%, hsl(154 100% 35%) 100%);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -101,5 +122,72 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  .btn-premium {
+    @apply inline-flex items-center justify-center px-8 py-4 text-sm font-medium rounded-lg transition-smooth shadow-elegant hover:shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
+  }
+  
+  .btn-hero {
+    @apply btn-premium bg-primary text-primary-foreground hover:bg-primary/90 transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply btn-premium bg-secondary text-secondary-foreground hover:bg-secondary/90;
+  }
+  
+  .btn-accent {
+    @apply btn-premium bg-accent text-accent-foreground hover:bg-accent/90;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .card-premium {
+    @apply bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl shadow-soft transition-smooth hover:shadow-elegant;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
   }
 }
