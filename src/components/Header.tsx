@@ -26,12 +26,14 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <div className={`text-xl md:text-2xl font-bold text-gradient ${language === 'ur' ? 'font-elegant' : ''}`}>
-              {language === 'ur' ? 'عسکری کنسلٹنٹس' : 'Askari Consultants'}
+          <div className={`flex-shrink-0 ${language === 'ur' ? 'text-right' : ''}`}>
+            <div className={`text-xl md:text-2xl font-light tracking-widest uppercase text-gradient ${language === 'ur' ? 'urdu-elegant' : ''}`}>
+              {language === 'ur' ? 'عسکری' : 'ASKARI'}
             </div>
-            <div className="text-xs text-muted-foreground">
-              {language === 'ur' ? 'آپ کا اٹلی کا راستہ' : 'Your Gateway to Italy'}
+            <div className="text-xs text-accent tracking-[0.2em] uppercase font-medium">
+              {language === 'ur' ? 'کنسلٹنٹس' : 'CONSULTANTS'}
             </div>
+          </div>
           </div>
           
           {/* Desktop Navigation */}
@@ -58,7 +60,7 @@ export const Header = () => {
               <Globe className="h-4 w-4 mr-2" />
               {language === 'en' ? 'اردو' : 'EN'}
             </Button>
-            <Button className="btn-hero">
+            <Button className="btn-luxury text-xs tracking-widest">
               {t('hero.cta.consultation')}
             </Button>
           </div>
@@ -99,7 +101,7 @@ export const Header = () => {
                 </a>
               ))}
               <div className="pt-4 border-t border-border/50 mt-4">
-                <Button className="btn-hero w-full">
+                <Button className="btn-luxury w-full text-xs tracking-widest">
                   {t('hero.cta.consultation')}
                 </Button>
               </div>

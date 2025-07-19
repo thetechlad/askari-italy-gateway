@@ -1,83 +1,133 @@
-import { ArrowRight, Phone, FileText } from 'lucide-react';
+import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import heroImage from '@/assets/hero-italy.jpg';
 
 export const HeroSection = () => {
   const { language, t } = useLanguage();
   
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 gradient-hero"></div>
-      
-      {/* Decorative Elements */}
+      {/* Background Image with Overlay */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+        <img 
+          src={heroImage} 
+          alt="Italian cityscape" 
+          className="w-full h-full object-cover"
+        />
+        <div className="overlay-luxury"></div>
+        <div className="overlay-texture"></div>
       </div>
       
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="max-w-4xl mx-auto">
-          {/* Flag Emoji */}
-          <div className="mb-6">
-            <span className="text-6xl">🇮🇹</span>
-          </div>
+      {/* Dramatic Geometric Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-full h-1 bg-accent animate-luxury"></div>
+        <div className="absolute bottom-0 right-0 w-1 h-full bg-secondary/30 animate-dramatic"></div>
+        <div className="absolute top-1/4 right-1/4 w-px h-64 bg-accent/50 rotate-45 animate-luxury"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-32 h-px bg-secondary/40 animate-dramatic"></div>
+      </div>
+      
+      {/* Main Content */}
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
           
-          {/* Main Headline */}
-          <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-6 ${language === 'ur' ? 'font-elegant leading-relaxed' : 'leading-tight'}`}>
-            <span className="text-primary-foreground">
-              {t('hero.title')}
-            </span>
-          </h1>
-          
-          {/* Subtitle */}
-          <p className={`text-lg md:text-xl lg:text-2xl text-primary-foreground/90 mb-8 max-w-3xl mx-auto ${language === 'ur' ? 'font-elegant leading-relaxed' : 'leading-relaxed'}`}>
-            {t('hero.subtitle')}
-          </p>
-          
-          {/* CTA Buttons */}
-          <div className={`flex flex-col sm:flex-row gap-4 justify-center items-center ${language === 'ur' ? 'flex-row-reverse' : ''}`}>
-            <Button className="btn-hero group">
-              <Phone className="h-5 w-5 mr-2" />
-              {t('hero.cta.consultation')}
-              <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
-            </Button>
+          {/* Tom Ford Style Typography */}
+          <div className="text-center mb-16">
+            {/* Luxury Brand Identifier */}
+            <div className={`mb-8 ${language === 'ur' ? 'urdu-elegant' : ''}`}>
+              <span className="text-accent text-sm md:text-base font-medium tracking-[0.3em] uppercase">
+                {language === 'ur' ? 'عسکری کنسلٹنٹس' : 'ASKARI CONSULTANTS'}
+              </span>
+              <div className="w-24 h-px bg-accent/60 mx-auto mt-4"></div>
+            </div>
             
-            <Button variant="outline" className="btn-premium bg-background/10 text-primary-foreground border-primary-foreground/30 hover:bg-background/20">
-              <FileText className="h-5 w-5 mr-2" />
-              {t('hero.cta.services')}
-            </Button>
+            {/* Hero Typography - Tom Ford Style */}
+            <h1 className={`text-hero mb-8 ${language === 'ur' ? 'urdu-elegant leading-relaxed' : ''}`}>
+              <span className="block text-primary-foreground mb-4">
+                {language === 'ur' ? 'اٹلی' : 'ITALY'}
+              </span>
+              <span className="block text-accent text-3xl md:text-5xl lg:text-6xl font-light tracking-wider">
+                {language === 'ur' ? 'آپ کا اگلا' : 'YOUR NEXT'}
+              </span>
+              <span className="block text-primary-foreground">
+                {language === 'ur' ? 'باب' : 'CHAPTER'}
+              </span>
+            </h1>
+            
+            {/* Sophisticated Subtitle */}
+            <div className="max-w-2xl mx-auto mb-12">
+              <p className={`text-elegant text-primary-foreground/90 ${language === 'ur' ? 'urdu-elegant' : ''}`}>
+                {language === 'ur' 
+                  ? 'دنیا کی سب سے خوبصورت تہذیب میں داخل ہونے کا راستہ'
+                  : 'Gateway to the world\'s most beautiful civilization'
+                }
+              </p>
+              <div className="w-16 h-px bg-accent mx-auto mt-6"></div>
+            </div>
           </div>
           
-          {/* Stats */}
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-accent mb-2">100+</div>
-              <div className={`text-sm text-primary-foreground/80 ${language === 'ur' ? 'font-elegant' : ''}`}>
-                {language === 'ur' ? 'طلباء کو بھیجا گیا' : 'Students Placed'}
-              </div>
+          {/* Tom Ford Style CTA Section */}
+          <div className="flex flex-col items-center space-y-8">
+            {/* Primary CTA */}
+            <div className={`flex flex-col sm:flex-row gap-6 ${language === 'ur' ? 'sm:flex-row-reverse' : ''}`}>
+              <Button className="btn-luxury group relative z-10">
+                <span className="relative z-10 flex items-center">
+                  {t('hero.cta.consultation')}
+                  <ArrowRight className="ml-3 h-4 w-4 transition-dramatic group-hover:translate-x-2" />
+                </span>
+              </Button>
+              
+              <Button className="btn-ghost-luxury group">
+                <Play className="mr-3 h-4 w-4" />
+                <span className="relative z-10">
+                  {language === 'ur' ? 'ہماری کہانی' : 'WATCH STORY'}
+                </span>
+              </Button>
             </div>
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-accent mb-2">95%</div>
-              <div className={`text-sm text-primary-foreground/80 ${language === 'ur' ? 'font-elegant' : ''}`}>
-                {language === 'ur' ? 'ویزا کامیابی کی شرح' : 'Visa Success Rate'}
+            
+            {/* Prestigious Stats - Tom Ford Style */}
+            <div className="grid grid-cols-3 gap-12 mt-20 max-w-2xl">
+              <div className="text-center group">
+                <div className="text-3xl md:text-4xl font-light text-accent mb-2 transition-dramatic group-hover:scale-110">
+                  100+
+                </div>
+                <div className={`text-xs text-primary-foreground/70 tracking-widest uppercase ${language === 'ur' ? 'font-elegant' : ''}`}>
+                  {language === 'ur' ? 'کامیاب کیسز' : 'SUCCESS CASES'}
+                </div>
+                <div className="w-8 h-px bg-accent/40 mx-auto mt-2 transition-dramatic group-hover:w-12"></div>
               </div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-accent mb-2">5★</div>
-              <div className={`text-sm text-primary-foreground/80 ${language === 'ur' ? 'font-elegant' : ''}`}>
-                {language === 'ur' ? 'کلائنٹ کی درجہ بندی' : 'Client Rating'}
+              
+              <div className="text-center group">
+                <div className="text-3xl md:text-4xl font-light text-accent mb-2 transition-dramatic group-hover:scale-110">
+                  95%
+                </div>
+                <div className={`text-xs text-primary-foreground/70 tracking-widest uppercase ${language === 'ur' ? 'font-elegant' : ''}`}>
+                  {language === 'ur' ? 'ویزا ریٹ' : 'VISA RATE'}
+                </div>
+                <div className="w-8 h-px bg-accent/40 mx-auto mt-2 transition-dramatic group-hover:w-12"></div>
+              </div>
+              
+              <div className="text-center group">
+                <div className="text-3xl md:text-4xl font-light text-accent mb-2 transition-dramatic group-hover:scale-110">
+                  5★
+                </div>
+                <div className={`text-xs text-primary-foreground/70 tracking-widest uppercase ${language === 'ur' ? 'font-elegant' : ''}`}>
+                  {language === 'ur' ? 'ریٹنگ' : 'RATING'}
+                </div>
+                <div className="w-8 h-px bg-accent/40 mx-auto mt-2 transition-dramatic group-hover:w-12"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
       
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary-foreground/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary-foreground/50 rounded-full mt-2 animate-pulse"></div>
+      {/* Tom Ford Minimal Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <div className="flex flex-col items-center">
+          <div className="w-px h-16 bg-accent/40 animate-pulse"></div>
+          <div className="text-xs text-primary-foreground/60 tracking-widest uppercase mt-4">
+            {language === 'ur' ? 'دریافت کریں' : 'DISCOVER'}
+          </div>
         </div>
       </div>
     </section>

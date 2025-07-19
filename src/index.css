@@ -37,18 +37,29 @@ All colors MUST be HSL.
     --input: 210 20% 90%;
     --ring: 210 83% 19%;
 
-    /* Premium Design System */
-    --gradient-primary: linear-gradient(135deg, hsl(210 83% 19%), hsl(210 83% 25%));
-    --gradient-secondary: linear-gradient(135deg, hsl(154 100% 29%), hsl(154 100% 35%));
-    --gradient-accent: linear-gradient(135deg, hsl(41 48% 73%), hsl(41 48% 80%));
-    --gradient-hero: linear-gradient(135deg, hsl(210 83% 19%) 0%, hsl(154 100% 29%) 100%);
+    /* Tom Ford Inspired Premium Design System */
+    --gradient-primary: linear-gradient(135deg, hsl(210 83% 19%), hsl(210 83% 8%));
+    --gradient-secondary: linear-gradient(135deg, hsl(154 100% 29%), hsl(154 100% 20%));
+    --gradient-accent: linear-gradient(135deg, hsl(41 48% 73%), hsl(41 48% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 83% 8%) 0%, hsl(210 83% 15%) 50%, hsl(154 100% 20%) 100%);
+    --gradient-dramatic: linear-gradient(180deg, hsl(210 83% 8%) 0%, hsl(210 83% 4%) 100%);
+    --gradient-luxury: linear-gradient(45deg, hsl(41 48% 73% / 0.1), hsl(210 83% 19% / 0.1));
     
-    --shadow-elegant: 0 10px 30px -10px hsl(210 83% 19% / 0.3);
-    --shadow-soft: 0 4px 15px -5px hsl(210 20% 50% / 0.2);
-    --shadow-gold: 0 8px 25px -8px hsl(41 48% 73% / 0.4);
+    /* Tom Ford Shadows & Effects */
+    --shadow-elegant: 0 20px 60px -20px hsl(210 83% 8% / 0.4);
+    --shadow-soft: 0 8px 30px -8px hsl(210 20% 50% / 0.15);
+    --shadow-gold: 0 15px 40px -10px hsl(41 48% 73% / 0.3);
+    --shadow-dramatic: 0 30px 80px -20px hsl(210 83% 8% / 0.6);
+    --shadow-inset: inset 0 2px 4px hsl(210 83% 8% / 0.1);
     
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Premium Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-dramatic: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+
+    /* Tom Ford Typography Scale */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', system-ui, sans-serif;
 
     --radius: 0.5rem;
 
@@ -99,11 +110,20 @@ All colors MUST be HSL.
     --input: 210 50% 20%;
     --ring: 41 48% 73%;
 
-    /* Dark Mode Gradients */
+    /* Dark Mode Tom Ford Colors */
     --gradient-primary: linear-gradient(135deg, hsl(41 48% 73%), hsl(41 48% 80%));
     --gradient-secondary: linear-gradient(135deg, hsl(154 100% 35%), hsl(154 100% 40%));
     --gradient-accent: linear-gradient(135deg, hsl(210 83% 25%), hsl(210 83% 30%));
-    --gradient-hero: linear-gradient(135deg, hsl(210 83% 8%) 0%, hsl(154 100% 35%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(210 83% 4%) 0%, hsl(210 83% 12%) 50%, hsl(154 100% 25%) 100%);
+    --gradient-dramatic: linear-gradient(180deg, hsl(210 83% 4%) 0%, hsl(210 83% 8%) 100%);
+    --gradient-luxury: linear-gradient(45deg, hsl(41 48% 73% / 0.15), hsl(210 83% 8% / 0.15);
+
+    /* Dark Mode Shadows */
+    --shadow-elegant: 0 20px 60px -20px hsl(0 0% 0% / 0.6);
+    --shadow-soft: 0 8px 30px -8px hsl(0 0% 0% / 0.3);
+    --shadow-gold: 0 15px 40px -10px hsl(41 48% 73% / 0.4);
+    --shadow-dramatic: 0 30px 80px -20px hsl(0 0% 0% / 0.8);
+    --shadow-inset: inset 0 2px 4px hsl(0 0% 0% / 0.2);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -122,72 +142,155 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: var(--font-body);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
 @layer components {
-  .gradient-primary {
-    background: var(--gradient-primary);
+  /* Tom Ford Inspired Gradient Classes */
+  .gradient-primary { background: var(--gradient-primary); }
+  .gradient-secondary { background: var(--gradient-secondary); }
+  .gradient-accent { background: var(--gradient-accent); }
+  .gradient-hero { background: var(--gradient-hero); }
+  .gradient-dramatic { background: var(--gradient-dramatic); }
+  .gradient-luxury { background: var(--gradient-luxury); }
+  
+  /* Tom Ford Shadow System */
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-gold { box-shadow: var(--shadow-gold); }
+  .shadow-dramatic { box-shadow: var(--shadow-dramatic); }
+  .shadow-inset { box-shadow: var(--shadow-inset); }
+  
+  /* Premium Transitions */
+  .transition-smooth { transition: var(--transition-smooth); }
+  .transition-bounce { transition: var(--transition-bounce); }
+  .transition-dramatic { transition: var(--transition-dramatic); }
+  
+  /* Tom Ford Button System */
+  .btn-tom-ford {
+    @apply relative overflow-hidden px-12 py-4 text-sm font-medium tracking-wider uppercase;
+    @apply rounded-none border-2 transition-dramatic;
+    @apply before:absolute before:inset-0 before:bg-current before:scale-x-0 before:origin-right;
+    @apply before:transition-dramatic hover:before:scale-x-100 hover:before:origin-left;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
   }
   
-  .gradient-secondary {
-    background: var(--gradient-secondary);
+  .btn-luxury {
+    @apply btn-tom-ford bg-primary text-primary-foreground border-primary;
+    @apply hover:text-primary shadow-elegant hover:shadow-dramatic;
   }
   
-  .gradient-accent {
-    background: var(--gradient-accent);
+  .btn-italia {
+    @apply btn-tom-ford bg-secondary text-secondary-foreground border-secondary;
+    @apply hover:text-secondary shadow-soft hover:shadow-gold;
   }
   
-  .gradient-hero {
-    background: var(--gradient-hero);
+  .btn-exclusive {
+    @apply btn-tom-ford bg-accent text-accent-foreground border-accent;
+    @apply hover:text-accent shadow-gold hover:shadow-dramatic;
   }
   
-  .shadow-elegant {
-    box-shadow: var(--shadow-elegant);
+  .btn-ghost-luxury {
+    @apply btn-tom-ford bg-transparent text-foreground border-foreground/20;
+    @apply hover:bg-foreground hover:text-background hover:border-foreground;
   }
   
-  .shadow-soft {
-    box-shadow: var(--shadow-soft);
+  /* Tom Ford Typography */
+  .text-display {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight leading-tight;
   }
   
-  .shadow-gold {
-    box-shadow: var(--shadow-gold);
+  .text-hero {
+    @apply text-display text-5xl md:text-7xl lg:text-8xl;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
-  .transition-smooth {
-    transition: var(--transition-smooth);
+  .text-luxury {
+    @apply text-display text-2xl md:text-3xl lg:text-4xl;
   }
   
-  .transition-bounce {
-    transition: var(--transition-bounce);
+  .text-elegant {
+    @apply text-lg md:text-xl leading-relaxed tracking-wide;
   }
   
-  .btn-premium {
-    @apply inline-flex items-center justify-center px-8 py-4 text-sm font-medium rounded-lg transition-smooth shadow-elegant hover:shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
+  /* Tom Ford Card System */
+  .card-tom-ford {
+    @apply relative bg-card/80 backdrop-blur-xl border border-border/20;
+    @apply rounded-lg shadow-elegant transition-dramatic;
+    @apply hover:shadow-dramatic hover:scale-[1.02] hover:bg-card/90;
   }
   
-  .btn-hero {
-    @apply btn-premium bg-primary text-primary-foreground hover:bg-primary/90 transform hover:scale-105;
+  .card-luxury {
+    @apply card-tom-ford bg-gradient-to-br from-primary/5 to-accent/5;
+    @apply border-primary/20 hover:border-primary/40;
   }
   
-  .btn-secondary {
-    @apply btn-premium bg-secondary text-secondary-foreground hover:bg-secondary/90;
+  .card-dramatic {
+    @apply relative overflow-hidden bg-gradient-to-br from-primary to-primary/80;
+    @apply text-primary-foreground shadow-dramatic;
+    @apply before:absolute before:inset-0 before:bg-gradient-to-t before:from-black/20 before:to-transparent;
   }
   
-  .btn-accent {
-    @apply btn-premium bg-accent text-accent-foreground hover:bg-accent/90;
+  /* Tom Ford Section Spacing */
+  .section-tom-ford {
+    @apply py-20 md:py-32 lg:py-40;
   }
   
-  .text-gradient {
-    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  .section-dramatic {
+    @apply relative overflow-hidden;
+    @apply before:absolute before:inset-0 before:bg-gradient-to-b before:from-transparent before:via-primary/5 before:to-transparent;
   }
   
-  .card-premium {
-    @apply bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl shadow-soft transition-smooth hover:shadow-elegant;
+  /* Luxury Overlays */
+  .overlay-luxury {
+    @apply absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-secondary/80;
   }
   
-  .section-padding {
-    @apply py-16 md:py-24 lg:py-32;
+  .overlay-texture {
+    @apply absolute inset-0 opacity-30;
+    background-image: 
+      radial-gradient(circle at 20% 50%, hsl(var(--accent)) 1px, transparent 1px),
+      radial-gradient(circle at 80% 50%, hsl(var(--primary)) 1px, transparent 1px);
+    background-size: 100px 100px, 80px 80px;
+  }
+  
+  /* Tom Ford Animations */
+  .animate-luxury {
+    animation: luxury-float 6s ease-in-out infinite;
+  }
+  
+  .animate-dramatic {
+    animation: dramatic-scale 8s ease-in-out infinite;
+  }
+  
+  @keyframes luxury-float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+  }
+  
+  @keyframes dramatic-scale {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.05) rotate(1deg); }
+  }
+  
+  /* Tom Ford Language Support */
+  .rtl-support {
+    @apply [direction:rtl];
+  }
+  
+  .urdu-elegant {
+    font-family: var(--font-display);
+    @apply text-right leading-loose tracking-wider;
   }
 }
