@@ -83,7 +83,7 @@ export const ContactSection = () => {
             {/* Contact Information */}
             <div className="space-y-8 mt-12">
               <div className={`card-tom-ford p-6 bg-background/5 backdrop-blur-xl ${language === 'ur' ? 'text-right' : ''}`}>
-                <div className={`flex items-start gap-4 ${language === 'ur' ? 'flex-row-reverse' : ''}`}>
+                <div className={`flex items-start gap-4 justify-center ${language === 'ur' ? 'flex-row-reverse' : ''}`}>
                   <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
                     <MapPin className="h-6 w-6 text-accent" />
                   </div>
@@ -99,7 +99,7 @@ export const ContactSection = () => {
               </div>
               
               <div className={`card-tom-ford p-6 bg-background/5 backdrop-blur-xl ${language === 'ur' ? 'text-right' : ''}`}>
-                <div className={`flex items-start gap-4 ${language === 'ur' ? 'flex-row-reverse' : ''}`}>
+                <div className={`flex items-start gap-4 justify-center ${language === 'ur' ? 'flex-row-reverse' : ''}`}>
                   <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Mail className="h-6 w-6 text-secondary" />
                   </div>
@@ -115,7 +115,7 @@ export const ContactSection = () => {
               </div>
               
               <div className={`card-tom-ford p-6 bg-background/5 backdrop-blur-xl ${language === 'ur' ? 'text-right' : ''}`}>
-                <div className={`flex items-start gap-4 ${language === 'ur' ? 'flex-row-reverse' : ''}`}>
+                <div className={`flex items-start gap-4 justify-center ${language === 'ur' ? 'flex-row-reverse' : ''}`}>
                   <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Clock className="h-6 w-6 text-accent" />
                   </div>

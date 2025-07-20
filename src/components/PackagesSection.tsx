@@ -101,7 +101,7 @@ export const PackagesSection = () => {
                 
                 {/* Package Header */}
                 <div className={`mb-8 ${language === 'ur' ? 'text-right' : ''}`}>
-                  <div className={`flex items-center gap-3 mb-4 ${language === 'ur' ? 'flex-row-reverse justify-end' : ''}`}>
+                  <div className={`flex items-center gap-3 mb-4 justify-center ${language === 'ur' ? 'flex-row-reverse' : ''}`}>
                     <div className="w-10 h-10 bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg flex items-center justify-center">
                       <pkg.icon className="h-5 w-5 text-primary" />
                     </div>

@@ -69,7 +69,7 @@ export const HeroSection = () => {
           {/* Tom Ford Style CTA Section */}
           <div className="flex flex-col items-center space-y-8">
             {/* Primary CTA */}
-            <div className={`flex flex-col sm:flex-row gap-6 ${language === 'ur' ? 'sm:flex-row-reverse' : ''}`}>
+            <div className={`flex flex-col sm:flex-row gap-6 justify-center ${language === 'ur' ? 'sm:flex-row-reverse' : ''}`}>
               <Button variant="luxury" className="group relative z-10">
                 <span className="relative z-10 flex items-center">
                   {t('hero.cta.consultation')}
