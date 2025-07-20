@@ -70,14 +70,14 @@ export const HeroSection = () => {
           <div className="flex flex-col items-center space-y-8">
             {/* Primary CTA */}
             <div className={`flex flex-col sm:flex-row gap-6 ${language === 'ur' ? 'sm:flex-row-reverse' : ''}`}>
-              <Button className="btn-luxury group relative z-10">
+              <Button variant="luxury" className="group relative z-10">
                 <span className="relative z-10 flex items-center">
                   {t('hero.cta.consultation')}
                   <ArrowRight className="ml-3 h-4 w-4 transition-dramatic group-hover:translate-x-2" />
                 </span>
               </Button>
               
-              <Button className="btn-ghost-luxury group">
+              <Button variant="outline" className="group border-accent text-accent hover:bg-accent hover:text-accent-foreground">
                 <Play className="mr-3 h-4 w-4" />
                 <span className="relative z-10">
                   {language === 'ur' ? 'ہماری کہانی' : 'WATCH STORY'}

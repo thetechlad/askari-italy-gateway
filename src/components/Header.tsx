@@ -62,7 +62,7 @@ export const Header = () => {
               <Globe className="h-4 w-4 mr-2" />
               {language === 'en' ? 'اردو' : 'EN'}
             </Button>
-            <Button className="btn-luxury text-xs tracking-widest">
+            <Button variant="luxury" className={language === 'ur' ? 'font-elegant' : ''}>
               {t('hero.cta.consultation')}
             </Button>
           </div>
@@ -103,7 +103,7 @@ export const Header = () => {
                 </a>
               ))}
               <div className="pt-4 border-t border-accent/20 mt-4">
-                <Button className="btn-luxury w-full text-xs tracking-widest">
+                <Button variant="luxury" className={`w-full ${language === 'ur' ? 'font-elegant' : ''}`}>
                   {t('hero.cta.consultation')}
                 </Button>
               </div>

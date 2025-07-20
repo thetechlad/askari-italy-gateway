@@ -12,7 +12,7 @@ export const PackagesSection = () => {
       description: language === 'ur' ? 'پبلک یونیورسٹیوں میں درخواست دینے والے طلباء کے لیے بہترین' : 'Perfect for students applying to Public Universities',
       icon: Zap,
       tier: 'ESSENTIAL',
-      buttonClass: 'btn-luxury',
+      buttonVariant: 'luxury' as const,
       features: [
         language === 'ur' ? 'داخلہ پروسیسنگ (1 پروگرام)' : 'Admission Processing (1 Program)',
         language === 'ur' ? 'ویزا فائلنگ سپورٹ' : 'Visa Filing Support',
@@ -28,7 +28,7 @@ export const PackagesSection = () => {
       description: language === 'ur' ? 'ماسٹرز کے لیے درخواست دینے والے طلباء اور پیشہ ور افراد کے لیے مثالی' : 'Ideal for students & professionals applying for Masters',
       icon: Star,
       tier: 'PREMIUM',
-      buttonClass: 'btn-italia',
+      buttonVariant: 'premium' as const,
       popular: true,
       features: [
         language === 'ur' ? 'داخلہ (3 پروگرام تک)' : 'Admission (Up to 3 Programs)',
@@ -47,7 +47,7 @@ export const PackagesSection = () => {
       description: language === 'ur' ? 'اٹلی پہنچنے تک مکمل مدد کے لیے بہترین' : 'Best for complete hand-holding until you\'re in Italy',
       icon: Crown,
       tier: 'EXCLUSIVE',
-      buttonClass: 'btn-exclusive',
+      buttonVariant: 'luxury' as const,
       features: [
         language === 'ur' ? 'پرو پیکج کی تمام خدمات +' : 'All Services in Pro Package +',
         language === 'ur' ? 'اطالوی زبان کا کورس' : 'Italian Language Course',
@@ -138,7 +138,7 @@ export const PackagesSection = () => {
                 </div>
                 
                 {/* CTA Button */}
-                <Button className={`${pkg.buttonClass} w-full group`}>
+                <Button variant={pkg.buttonVariant} className="w-full group">
                   <span className="relative z-10 tracking-wider uppercase text-sm">
                     {language === 'ur' ? 'منتخب کریں' : 'SELECT PACKAGE'}
                   </span>
@@ -155,10 +155,10 @@ export const PackagesSection = () => {
           </p>
           
           <div className={`flex flex-col sm:flex-row gap-6 justify-center ${language === 'ur' ? 'sm:flex-row-reverse' : ''}`}>
-            <Button className="btn-ghost-luxury">
+            <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
               {t('packages.compare')}
             </Button>
-            <Button className="btn-exclusive">
+            <Button variant="premium">
               {t('packages.talk')}
             </Button>
           </div>
