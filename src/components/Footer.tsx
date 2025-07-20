@@ -1,5 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import logo from '@/assets/logo.svg';
+// Using uploaded logo directly
 
 export const Footer = () => {
   const { language } = useLanguage();
@@ -11,7 +11,7 @@ export const Footer = () => {
           {/* Logo & Description */}
           <div className="md:col-span-2">
             <div className={`flex items-center gap-3 mb-2 ${language === 'ur' ? 'justify-end' : ''}`}>
-              <img src={logo} alt="Askari Consultants" className="h-8 w-auto" />
+              <img src="/lovable-uploads/8debdb18-961f-4e5f-a180-153f391457b1.png" alt="Askari Consultants" className="h-8 w-auto" />
               <div className={`text-xl font-bold ${language === 'ur' ? 'font-elegant' : ''}`}>
                 {language === 'ur' ? 'عسکری کنسلٹنٹس' : 'Askari Consultants'}
               </div>

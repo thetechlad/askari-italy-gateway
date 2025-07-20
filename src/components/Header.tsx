@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
-import logo from '@/assets/logo.svg';
+// Using uploaded logo directly
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,7 +27,7 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <div className={`flex items-center space-x-3 ${language === 'ur' ? 'flex-row-reverse space-x-reverse' : ''}`}>
-            <img src={logo} alt="Askari Consultants" className="h-8 md:h-10 w-auto" />
+            <img src="/lovable-uploads/8debdb18-961f-4e5f-a180-153f391457b1.png" alt="Askari Consultants" className="h-8 md:h-10 w-auto" />
             <div className={`${language === 'ur' ? 'text-right' : ''}`}>
               <div className={`text-xl md:text-2xl font-light tracking-widest uppercase text-primary-foreground ${language === 'ur' ? 'urdu-elegant' : ''}`}>
                 {language === 'ur' ? 'عسکری' : 'ASKARI'}
