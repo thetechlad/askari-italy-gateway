@@ -1,4 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import logo from '@/assets/logo.svg';
 
 export const Footer = () => {
   const { language } = useLanguage();
@@ -9,8 +10,11 @@ export const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div className="md:col-span-2">
-            <div className={`text-xl font-bold mb-2 ${language === 'ur' ? 'font-elegant text-right' : ''}`}>
-              {language === 'ur' ? 'عسکری کنسلٹنٹس' : 'Askari Consultants'}
+            <div className={`flex items-center gap-3 mb-2 ${language === 'ur' ? 'justify-end' : ''}`}>
+              <img src={logo} alt="Askari Consultants" className="h-8 w-auto" />
+              <div className={`text-xl font-bold ${language === 'ur' ? 'font-elegant' : ''}`}>
+                {language === 'ur' ? 'عسکری کنسلٹنٹس' : 'Askari Consultants'}
+              </div>
             </div>
             <p className={`text-primary-foreground/80 mb-4 ${language === 'ur' ? 'font-elegant text-right text-sm' : 'text-sm'}`}>
               {language === 'ur' 
